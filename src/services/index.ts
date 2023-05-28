@@ -1,1 +1,3 @@
-export {};
+import { spaceFlightNewsAPI } from "./spaceFlightNewsAPI";
+
+export { spaceFlightNewsAPI };
