@@ -7,6 +7,10 @@ export enum Color {
   WHITE = "#FFFFFF",
   GRAY = "#F3F3F3",
   BTN_COLOR = "BTN_COLOR",
+
   WHITE_HEADER = "var(--white)",
+  WHITE_BACKGROUND = "var(--white-bg)",
   FOOTER_FONT_COLOR = "var(--grey-font-footer)",
+  FONT_COLOR = "var(--grey-font)",
+  NAV = "var(--navBar-menu)",
 }

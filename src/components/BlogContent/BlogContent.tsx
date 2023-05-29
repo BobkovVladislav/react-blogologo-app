@@ -4,7 +4,8 @@ import { BlogItemApi } from "../../types";
 import { useAppSelector } from "../../store/hooks/hooks";
 import { getUserInfo } from "../../store/selectors/userSelector";
 import { getFavotites } from "../../store/selectors/favoritesSelector";
-// import { setNotFoundImg } from "utils";
+import { setNotFoundImg } from "../../utils/setNotFoundImg";
+
 import {
   NavigationLink,
   Title,

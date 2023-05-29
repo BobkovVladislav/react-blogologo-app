@@ -1,10 +1,10 @@
 import Select, { SingleValue } from "react-select";
 import { selectStyles } from "./styles";
-import { SelectOption } from "../../types/types";
+import { TipOption } from "../../types/types";
 import { options } from "../../config";
 
 interface SelectProps {
-  handleSelect: (option: SingleValue<SelectOption | null | any>) => void;
+  handleSelect: (option: SingleValue<TipOption | null | any>) => void;
 }
 
 export const CustomSelect = ({ handleSelect }: SelectProps) => {

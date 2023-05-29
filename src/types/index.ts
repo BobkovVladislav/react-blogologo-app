@@ -1,3 +1,3 @@
-import { BlogItemApi, SelectOption } from "./types";
+import { BlogItemApi, TipOption } from "./types";
 
-export type { BlogItemApi, SelectOption };
+export type { BlogItemApi, TipOption };

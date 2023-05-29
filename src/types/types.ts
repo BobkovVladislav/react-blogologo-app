@@ -17,9 +17,9 @@ interface Launch {
   provider: string;
 }
 
-interface SelectOption {
-  value: string;
-  label: string;
+interface TipOption {
+  readonly value: string;
+  readonly label: string;
 }
 
-export type { BlogItemApi, SelectOption };
+export type { BlogItemApi, TipOption };
