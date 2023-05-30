@@ -1,3 +1,4 @@
+import { format } from "fecha";
 import { memo } from "react";
 import { generatePath, useNavigate } from "react-router-dom";
 import { ROUTE } from "../../routes/routes";
@@ -48,6 +49,8 @@ export const BlogListItem = memo(
       });
     };
 
+    const printDate = format(new Date(publishedAt), "MMMM D, YYYY");
+
     return (
       <StyledArticleListItem
         initial={{ opacity: 0 }}
@@ -60,6 +63,7 @@ export const BlogListItem = memo(
             <Image src={imageUrl} alt={title} onError={setNotFoundImg} />
           </ImageWrapper>
           <InfoWrapper>
+            <PublishDate>{printDate}</PublishDate>
             <Title>
               {title.length > 70 ? title.slice(0, 70) + "..." : title}
             </Title>

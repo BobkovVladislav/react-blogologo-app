@@ -10,11 +10,11 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ROUTE } from "../../routes/routes";
+import { fetchSignInUser } from "../../store/features/userSlice/userSlice";
 import { useAppDispatch } from "../../store/hooks/hooks";
 import { useState } from "react";
 import { Modal } from "../Modal/Modal";
 import { validateEmail, validatePassword } from "../../utils/validateForm";
-import { fetchSignInUser } from "../../store/features/userSlice/userSlice";
 
 export interface SignInFormTypes {
   email: string;

@@ -1,4 +1,4 @@
-import { SignInForm } from "../../components/SingInForm/SingInForm";
+import { SignInForm } from "../../components/SingInForm/SignInForm";
 import { ROUTE } from "../../routes/routes";
 import { SigInTitle, SLink, StyledWrapper } from "./styles";
 

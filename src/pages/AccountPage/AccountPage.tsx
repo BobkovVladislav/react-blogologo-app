@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "../../routes/routes";
-import { useAppDispatch } from "../../store/hooks/hooks";
 import { logOut } from "../../store/features/userSlice/userSlice";
+import { useAppDispatch } from "../../store/hooks/hooks";
+
 import {
   AccountPageTitle,
   AccountPageWrapper,

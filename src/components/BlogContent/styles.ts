@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { B2, H2, S1 } from "../../ui/typography";
-import { Color } from "../../ui/colors";
-import { Media } from "../../ui/media";
+import { Media, H2, Color, S1, B2 } from "../../ui";
 
 const Wrapper = styled.div`
-  display: flex;
+  display: grid;
   grid-template-rows: auto;
   width: 100%;
   max-width: 1110px;
   padding-bottom: 36px;
+  ${Media.MD} {
+    padding-bottom: 20px;
+  }
 `;
 
 const NavigationLink = styled.span`
@@ -18,6 +19,11 @@ const NavigationLink = styled.span`
 const Title = styled.h2`
   ${H2}
   padding: 32px 0 48px 0;
+  ${Media.MD} {
+    padding: 22px 0 26px 0;
+    font-size: 22px;
+    line-height: 30px;
+  }
 `;
 
 const Image = styled.img`
@@ -34,6 +40,9 @@ const Text = styled.p`
   padding-top: 48px;
   font-size: 18px;
   line-height: 32px;
+  ${Media.MD} {
+    padding-top: 26px;
+  }
 `;
 
 const LinksWrapper = styled.div`
@@ -59,6 +68,7 @@ const OuterLinkWrapper = styled.p`
       rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
 `;
+
 const FavoritesButton = styled.button`
   ${S1};
   padding: 16px 32px;

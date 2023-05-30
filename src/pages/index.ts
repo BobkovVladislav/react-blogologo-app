@@ -1,6 +1,6 @@
 import { AccountPage } from "./AccountPage/AccountPage";
 import { BlogPage } from "./BlogPage/BlogPage";
-import { FavoritePage } from "./FavoritePage/FavoritePage";
+import { FavoritesPage } from "./FavoritesPage/FavoritesPage";
 import { HomePage } from "./HomePage/HomePage";
 import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
 import { ResetPage } from "./ResetPage/ResetPage";
@@ -11,7 +11,7 @@ import { SignUpPage } from "./SignUpPage/SignUpPage";
 export {
   AccountPage,
   BlogPage,
-  FavoritePage,
+  FavoritesPage,
   HomePage,
   NotFoundPage,
   ResetPage,
