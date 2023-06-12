@@ -1,6 +1,6 @@
-import { SignUpForm } from "../../components/SignUpForm/SignUpForm";
-import { ROUTE } from "../../routes/routes";
-import { StyledWrapper } from "../SignInPage/styles";
+import { SignUpForm } from "components";
+import { ROUTE } from "routes/routes";
+import { StyledWrapper } from "pages/SignInPage/styles";
 import { SigUpTitle, StyledLink } from "./styles";
 
 export const SignUpPage = () => {

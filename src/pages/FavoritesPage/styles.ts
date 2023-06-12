@@ -1,8 +1,8 @@
-import { StyledBlogList } from "../../components/BlogList/styles";
+import { StyledBlogList } from "components/BlogList/styles";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color, H1, H2, H3, Media } from "../../ui";
+import { H1, Color, H2, Media, H3 } from "ui";
 
 const FavoritesWrapper = styled(motion.div)`
   place-self: start center;
@@ -34,10 +34,4 @@ const StyledLink = styled(Link)`
 
 const FavoritesList = styled(StyledBlogList)``;
 
-export {
-  FavoritesWrapper,
-  Heading,
-  FavoritesList,
-  NoFavoritesText,
-  StyledLink,
-};
+export { FavoritesWrapper, Heading, FavoritesList, NoFavoritesText, StyledLink };

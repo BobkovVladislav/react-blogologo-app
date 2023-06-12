@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { H1 } from "../../ui";
-import { Media } from "../../ui/media";
-import { StyledBlogList } from "../../components/BlogList/styles";
-import { StyledPagination } from "../../components/Pagination/styles";
-import { TabsBlock } from "../../components/Tabs/styles";
+import { H1, Media } from "ui";
+import { StyledBlogList } from "components/BlogList/styles";
+import { StyledPagination } from "components/Pagination/styles";
+import { TabsBlock } from "components/Tabs/styles";
 
 const HomePageWrapper = styled(motion.main)`
   display: flex;

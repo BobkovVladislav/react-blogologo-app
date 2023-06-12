@@ -1,16 +1,10 @@
-import { BlogListItem } from "../../components/BlogListItem/BlogListItem";
-import { ROUTE } from "../../routes/routes";
-import { getFavotites } from "../../store/selectors/favoritesSelector";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { removeFromFavorites } from "../../store/features/favoritesSlice/favoritesSlice";
-import { BlogItemApi } from "../../types";
-import {
-  FavoritesWrapper,
-  Heading,
-  FavoritesList,
-  NoFavoritesText,
-  StyledLink,
-} from "./styles";
+import { BlogListItem } from "components";
+import { ROUTE } from "routes/routes";
+import { removeFromFavorites } from "store/features/favoritesSlice/favoritesSlice";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { getFavotites } from "store/selectors/favoritesSelector";
+import { BlogItemApi } from "types";
+import { FavoritesWrapper, Heading, FavoritesList, NoFavoritesText, StyledLink } from "./styles";
 
 export const FavoritesPage = () => {
   const { results } = useAppSelector(getFavotites);
@@ -34,8 +28,7 @@ export const FavoritesPage = () => {
       {results.length === 0 && (
         <>
           <NoFavoritesText>
-            Add your favorite articles or news items here to get quick access to
-            them at any time.
+            Add your favorite articles or news items here to get quick access to them at any time.
           </NoFavoritesText>
           <StyledLink to={ROUTE.HOME}>Check!</StyledLink>
         </>

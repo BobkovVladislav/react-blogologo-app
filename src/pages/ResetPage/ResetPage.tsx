@@ -1,6 +1,6 @@
-import { ResetForm } from "../../components/ResetForm/ResetForm";
-import { StyledWrapper } from "../SignInPage/styles";
-import { ROUTE } from "../../routes/routes";
+import { ResetForm } from "components";
+import { StyledWrapper } from "pages/SignInPage/styles";
+import { ROUTE } from "routes/routes";
 import { ResetPageTitle, SLink } from "./styles";
 
 export const ResetPage = () => {

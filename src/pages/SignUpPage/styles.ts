@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color, H1 } from "../../ui";
+import { Color, H1 } from "ui";
 
 const StyledLink = styled(Link)`
   padding: 16px;

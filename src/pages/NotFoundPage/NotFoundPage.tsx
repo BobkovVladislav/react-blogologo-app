@@ -1,12 +1,6 @@
-import { notFoundPageImg } from "../../assets";
-import { ROUTE } from "../../routes/routes";
-import {
-  NotFoundTitle,
-  NotFoundWrapper,
-  NotFoundSubTitle,
-  StyledLink,
-  Image,
-} from "./styles";
+import { notFoundPageImg } from "assets";
+import { ROUTE } from "routes/routes";
+import { NotFoundTitle, NotFoundWrapper, NotFoundSubTitle, StyledLink, Image } from "./styles";
 
 export const NotFoundPage = () => {
   return (
@@ -20,9 +14,7 @@ export const NotFoundPage = () => {
       }}
     >
       <NotFoundTitle>Whooops!</NotFoundTitle>
-      <NotFoundSubTitle>
-        Looks like this page went on vocation.
-      </NotFoundSubTitle>
+      <NotFoundSubTitle>Looks like this page went on vocation.</NotFoundSubTitle>
       <Image src={notFoundPageImg} alt="notFoundLogo" />
       <StyledLink to={ROUTE.HOME}>Back to Main</StyledLink>
     </NotFoundWrapper>

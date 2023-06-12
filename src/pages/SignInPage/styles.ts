@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { StyledLink } from "../../components/SingInForm/styles";
+import { StyledLink } from "components/SingInForm/styles";
 import styled from "styled-components";
-import { H1, H2 } from "../../ui";
-import { Media } from "../../ui/media";
+import { Media, H1, H2 } from "ui";
 
 const StyledWrapper = styled(motion.div)`
   display: grid;

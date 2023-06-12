@@ -1,5 +1,5 @@
-import { SignInForm } from "../../components/SingInForm/SignInForm";
-import { ROUTE } from "../../routes/routes";
+import { SignInForm } from "components";
+import { ROUTE } from "routes/routes";
 import { SigInTitle, SLink, StyledWrapper } from "./styles";
 
 export const SignInPage = () => {

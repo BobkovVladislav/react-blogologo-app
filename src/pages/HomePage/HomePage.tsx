@@ -1,20 +1,12 @@
-import { BlogList } from "../../components/BlogList/BlogList";
-import { CustomSelect } from "../../components";
-import { Modal } from "../../components/Modal/Modal";
-import { Pagination } from "../../components/Pagination/Pagination";
-import { Tabs } from "../../components/Tabs/Tabs";
-import { SkeletonLoader } from "../../components/SkeletonLoader/SkeletonLoader";
-import { TabsNames, options } from "../../config";
-import { useToggle } from "../../hooks/useToggle";
+import { BlogList, CustomSelect, Modal, Pagination, SkeletonLoader, Tabs } from "../../components";
+import { TabsNames, options } from "config";
+import { useToggle } from "hooks/useToggle";
 import { useEffect, useState } from "react";
 import { SingleValue } from "react-select";
-import {
-  fetchArticles,
-  fetchNews,
-} from "../../store/features/blogsSlice/blogsSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { getAllArticles } from "../../store/selectors/blogsSelector";
-import { TipOption } from "../../types";
+import { fetchArticles, fetchNews } from "store/features/blogsSlice/blogsSlice";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { getAllArticles } from "store/selectors/blogsSelector";
+import { TipOption } from "types";
 import {
   Title,
   HomePageWrapper,
@@ -60,15 +52,11 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    dispatch(
-      fetchArticles({ page: requestParams.page, value: option.value, word: "" })
-    );
+    dispatch(fetchArticles({ page: requestParams.page, value: option.value, word: "" }));
   }, [dispatch, option.value, requestParams.page]);
 
   useEffect(() => {
-    dispatch(
-      fetchNews({ page: requestParams.page, value: option.value, word: "" })
-    );
+    dispatch(fetchNews({ page: requestParams.page, value: option.value, word: "" }));
   }, [dispatch, option.value, requestParams.page]);
 
   return (
@@ -97,12 +85,8 @@ export const HomePage = () => {
           />
         </TabsWrapper>
         <SortPanelWrapper>
-          {tabValue === TabsNames.ARTICLE_VALUE && (
-            <CustomSelect handleSelect={handleSelect} />
-          )}
-          {tabValue === TabsNames.NEWS_VALUE && (
-            <CustomSelect handleSelect={handleSelect} />
-          )}
+          {tabValue === TabsNames.ARTICLE_VALUE && <CustomSelect handleSelect={handleSelect} />}
+          {tabValue === TabsNames.NEWS_VALUE && <CustomSelect handleSelect={handleSelect} />}
         </SortPanelWrapper>
       </SortPanelBlock>
 

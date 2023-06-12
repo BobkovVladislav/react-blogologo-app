@@ -1,20 +1,13 @@
-import { BlogContent } from "../../components/BlogContent/BlogContent";
-import { Modal } from "../../components/Modal/Modal";
-import { Spinner } from "../../components/Spinner/Spinner";
-import { Slider } from "../../components/Slider/Slider";
+import { BlogContent, Modal, Slider, Spinner } from "components";
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { BlogItemApi } from "../../types";
-import {
-  BlogContentWrapper,
-  RecommendationsTitle,
-  SliderWrapper,
-} from "./styles";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { addToFavorite } from "../../store/features/favoritesSlice/favoritesSlice";
-import { fetchArticles } from "../../store/features/blogsSlice/blogsSlice";
-import { getArticleById } from "../../store/selectors/blogByIdSelector";
-import { fetchArticleById } from "../../store/features/singleBlogItemSlice/singleBlogItemSlice";
+import { BlogItemApi } from "types";
+import { BlogContentWrapper, RecommendationsTitle, SliderWrapper } from "./styles";
+import { fetchArticles } from "store/features/blogsSlice/blogsSlice";
+import { addToFavorite } from "store/features/favoritesSlice/favoritesSlice";
+import { fetchArticleById } from "store/features/singleBlogItemSlice/singleBlogItemSlice";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { getArticleById } from "store/selectors/blogByIdSelector";
 
 export const BlogPage = () => {
   const [isActiveModal, setIsActiveModal] = useState(false);
@@ -55,10 +48,7 @@ export const BlogPage = () => {
         damping: 15,
       }}
     >
-      <BlogContent
-        blogItem={location.state.item}
-        onClick={handleAddToFavorites}
-      />
+      <BlogContent blogItem={location.state.item} onClick={handleAddToFavorites} />
       <SliderWrapper>
         <RecommendationsTitle>Recommendations</RecommendationsTitle>
         <Slider blogItem={location.state.items} />

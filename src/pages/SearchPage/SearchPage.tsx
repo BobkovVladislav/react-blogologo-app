@@ -1,13 +1,8 @@
-import { BlogList } from "../../components/BlogList/BlogList";
-import { Modal } from "../../components/Modal/Modal";
-import { Spinner } from "../../components/Spinner/Spinner";
+import { BlogList, Modal, Spinner } from "components";
 import { useEffect, useState } from "react";
-import {
-  fetchArticles,
-  fetchNews,
-} from "../../store/features/blogsSlice/blogsSlice";
-import { getAllArticles } from "../../store/selectors/blogsSelector";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
+import { fetchArticles, fetchNews } from "store/features/blogsSlice/blogsSlice";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { getAllArticles } from "store/selectors/blogsSelector";
 import { SearchPageWrapper, SearchResultsInfo } from "./styles";
 
 export const SearchPage = () => {
@@ -29,7 +24,7 @@ export const SearchPage = () => {
           page: 0,
           word: searchValue,
           value: "",
-        })
+        }),
       );
   }, [dispatch, searchValue]);
 
@@ -40,7 +35,7 @@ export const SearchPage = () => {
           page: 0,
           word: searchValue,
           value: "",
-        })
+        }),
       );
   }, [dispatch, searchValue]);
 

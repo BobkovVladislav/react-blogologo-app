@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { H2 } from "../../ui";
+import { H2 } from "ui";
 
 const SearchPageWrapper = styled(motion.div)`
   display: grid;

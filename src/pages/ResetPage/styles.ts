@@ -1,6 +1,6 @@
 import { StyledLink } from "../SignUpPage/styles";
 import styled from "styled-components";
-import { H1 } from "../../ui";
+import { H1 } from "ui";
 
 const ResetPage = styled.div``;
 
