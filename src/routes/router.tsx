@@ -1,10 +1,7 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router-dom";
-import { RequireAuth } from "../components/RequireAuth/RequireAuth";
-import { MainTemplate } from "../components";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { MainTemplate, RequireAuth } from "components";
+
+import { ROUTE } from "./routes";
 import {
   AccountPage,
   BlogPage,
@@ -15,8 +12,7 @@ import {
   SearchPage,
   SignInPage,
   SignUpPage,
-} from "../pages";
-import { ROUTE } from "./routes";
+} from "pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +28,6 @@ export const router = createBrowserRouter(
         <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
         <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
       </Route>
-    </Route>
-  )
+    </Route>,
+  ),
 );
