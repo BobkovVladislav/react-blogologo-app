@@ -1,10 +1,10 @@
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
-import { BlogItemApi } from "../../types";
-import { useAppSelector } from "../../store/hooks/hooks";
-import { getUserInfo } from "../../store/selectors/userSelector";
-import { getFavotites } from "../../store/selectors/favoritesSelector";
-import { setNotFoundImg } from "../../utils/setNotFoundImg";
+import { BlogItemApi } from "types";
+import { useAppSelector } from "store/hooks/hooks";
+import { getUserInfo } from "store/selectors/userSelector";
+import { getFavotites } from "store/selectors/favoritesSelector";
+import { setNotFoundImg } from "utils/setNotFoundImg";
 
 import {
   NavigationLink,
