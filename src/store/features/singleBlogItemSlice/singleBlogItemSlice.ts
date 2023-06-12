@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { BlogItemApi } from "../../../types";
-import { spaceFlightNewsAPI } from "../../../services";
+import { BlogItemApi } from "types";
+import { spaceFlightNewsAPI } from "services";
 
 interface ArticlesState {
   article: BlogItemApi;
@@ -17,31 +17,29 @@ const initialState: ArticlesState = {
   error: null,
 };
 
-export const fetchArticleById = createAsyncThunk<
-  BlogItemApi,
-  string,
-  { rejectValue: string }
->("articles/fetchArticles", async (params, { rejectWithValue }) => {
-  try {
-    return await spaceFlightNewsAPI.getArticleById(params);
-  } catch (error) {
-    const errorMessage = error as AxiosError;
-    return rejectWithValue(errorMessage.message);
-  }
-});
+export const fetchArticleById = createAsyncThunk<BlogItemApi, string, { rejectValue: string }>(
+  "articles/fetchArticles",
+  async (params, { rejectWithValue }) => {
+    try {
+      return await spaceFlightNewsAPI.getArticleById(params);
+    } catch (error) {
+      const errorMessage = error as AxiosError;
+      return rejectWithValue(errorMessage.message);
+    }
+  },
+);
 
-export const fetchNewsById = createAsyncThunk<
-  BlogItemApi,
-  string,
-  { rejectValue: string }
->("news/fetchSingleNews", async (params, { rejectWithValue }) => {
-  try {
-    return await spaceFlightNewsAPI.getNewsById(params);
-  } catch (error) {
-    const errorMessage = error as AxiosError;
-    return rejectWithValue(errorMessage.message);
-  }
-});
+export const fetchNewsById = createAsyncThunk<BlogItemApi, string, { rejectValue: string }>(
+  "news/fetchSingleNews",
+  async (params, { rejectWithValue }) => {
+    try {
+      return await spaceFlightNewsAPI.getNewsById(params);
+    } catch (error) {
+      const errorMessage = error as AxiosError;
+      return rejectWithValue(errorMessage.message);
+    }
+  },
+);
 
 export const singleArticleSlice = createSlice({
   name: "singleBlogItem",

@@ -5,11 +5,7 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import {
-  FirebaseErrorCode,
-  FirebaseErrorMessage,
-  getFBErrorMessage,
-} from "../../../utils/firebaseErrors";
+import { FirebaseErrorMessage, FirebaseErrorCode, getFBErrorMessage } from "utils/firebaseErrors";
 
 interface UserState {
   name: string;
@@ -53,26 +49,19 @@ export const fetchSignUpUser = createAsyncThunk<
   UserNameEmail,
   CreateFirebaseAuth,
   { rejectValue: FirebaseErrorMessage }
->(
-  "user/signUpUser",
-  async ({ email, password, userName }, { rejectWithValue }) => {
-    try {
-      const auth = getAuth();
-      const userCredential = createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const userEmail = (await userCredential).user.email;
-      const name = userName;
+>("user/signUpUser", async ({ email, password, userName }, { rejectWithValue }) => {
+  try {
+    const auth = getAuth();
+    const userCredential = createUserWithEmailAndPassword(auth, email, password);
+    const userEmail = (await userCredential).user.email;
+    const name = userName;
 
-      return { userEmail, name };
-    } catch (error) {
-      const firebaseError = error as { code: FirebaseErrorCode };
-      return rejectWithValue(getFBErrorMessage(firebaseError.code));
-    }
+    return { userEmail, name };
+  } catch (error) {
+    const firebaseError = error as { code: FirebaseErrorCode };
+    return rejectWithValue(getFBErrorMessage(firebaseError.code));
   }
-);
+});
 
 export const fetchSignInUser = createAsyncThunk<
   UserEmail,
@@ -81,11 +70,7 @@ export const fetchSignInUser = createAsyncThunk<
 >("user/sigInUser", async ({ email, password }, { rejectWithValue }) => {
   try {
     const auth = getAuth();
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const userEmail = userCredential.user.email;
 
     return { userEmail };

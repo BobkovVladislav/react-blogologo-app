@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { BlogItemApi } from "../../../types";
-import { TabsNames } from "../../../config";
-import { spaceFlightNewsAPI } from "../../../services";
+import { BlogItemApi } from "types";
+import { TabsNames } from "config";
+import { spaceFlightNewsAPI } from "services";
 
 interface ArticlesState {
   articles: BlogItemApi[];
@@ -36,7 +36,7 @@ export const fetchArticles = createAsyncThunk<
       params.page,
       params.value,
       params.word,
-      TabsNames.ARTICLE_VALUE
+      TabsNames.ARTICLE_VALUE,
     );
   } catch (error) {
     const errorMessage = error as AxiosError;
@@ -54,7 +54,7 @@ export const fetchNews = createAsyncThunk<
       params.page,
       params.value,
       params.word,
-      TabsNames.NEWS_VALUE
+      TabsNames.NEWS_VALUE,
     );
   } catch (error) {
     const errorMessage = error as AxiosError;
