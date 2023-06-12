@@ -1,7 +1,7 @@
 import Select, { SingleValue } from "react-select";
 import { selectStyles } from "./styles";
-import { TipOption } from "../../types/types";
-import { options } from "../../config";
+import { TipOption } from "types";
+import { options } from "config";
 
 interface SelectProps {
   handleSelect: (option: SingleValue<TipOption | null | any>) => void;

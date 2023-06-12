@@ -9,12 +9,12 @@ import {
   StyledLink,
   ErrorMessage,
 } from "./styles";
-import { ROUTE } from "../../routes/routes";
-import { fetchSignInUser } from "../../store/features/userSlice/userSlice";
-import { useAppDispatch } from "../../store/hooks/hooks";
+import { ROUTE } from "routes/routes";
+import { fetchSignInUser } from "store/features/userSlice/userSlice";
+import { useAppDispatch } from "store/hooks/hooks";
 import { useState } from "react";
-import { Modal } from "../Modal/Modal";
-import { validateEmail, validatePassword } from "../../utils/validateForm";
+import { Modal } from "components";
+import { validateEmail, validatePassword } from "utils/validateForm";
 
 export interface SignInFormTypes {
   email: string;
@@ -52,8 +52,7 @@ export const SignInForm = () => {
     dispatch(fetchSignInUser(userInfo))
       .unwrap()
       .then(() => {
-        localStorage.length > 0 &&
-          localStorage.setItem("userInfo", JSON.stringify(userAuth));
+        localStorage.length > 0 && localStorage.setItem("userInfo", JSON.stringify(userAuth));
       })
       .catch((error) => {
         setErrorMessage(error);
@@ -67,11 +66,7 @@ export const SignInForm = () => {
   return (
     <StyledSigningForm onSubmit={handleSubmit(onSubmit)}>
       <SignInLabel>Email</SignInLabel>
-      <SignInInput
-        type="email"
-        placeholder="Your email"
-        {...register("email", validateEmail())}
-      />
+      <SignInInput type="email" placeholder="Your email" {...register("email", validateEmail())} />
       {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
 
       <SignInLabel>Password</SignInLabel>
@@ -80,17 +75,12 @@ export const SignInForm = () => {
         placeholder="Your password"
         {...register("password", validatePassword())}
       />
-      {errors.password && (
-        <ErrorMessage>{errors.password.message}</ErrorMessage>
-      )}
+      {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
 
-      <StyledLink to={ROUTE.HOME + ROUTE.RESET_PASSWORD}>
-        Forgot password?
-      </StyledLink>
+      <StyledLink to={ROUTE.HOME + ROUTE.RESET_PASSWORD}>Forgot password?</StyledLink>
       <SignInButton type="submit">Sign in</SignInButton>
       <SignInText>
-        Don’t have an account?{" "}
-        <StyledLink to={ROUTE.HOME + ROUTE.SIGN_UP}>Sign Up</StyledLink>
+        Don’t have an account? <StyledLink to={ROUTE.HOME + ROUTE.SIGN_UP}>Sign Up</StyledLink>
       </SignInText>
       {isActiveModal && !errorMessage && (
         <Modal message="Successful" handleClick={handleNavigate} />

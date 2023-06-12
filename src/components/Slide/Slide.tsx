@@ -1,15 +1,10 @@
-import {
-  ImageWrapper,
-  InfoWrapper,
-  PublishDate,
-  Title,
-} from "../BlogListItem/styles";
+import { ImageWrapper, InfoWrapper, PublishDate, Title } from "components/BlogListItem/styles";
 import { format } from "fecha";
 import { memo } from "react";
 import { generatePath, useNavigate } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
-import { BlogItemApi } from "../../types";
-import { setNotFoundImg } from "../../utils/setNotFoundImg";
+import { ROUTE } from "routes/routes";
+import { BlogItemApi } from "types";
+import { setNotFoundImg } from "utils/setNotFoundImg";
 import { Image, StyledSlide } from "./styles";
 
 interface SlideProps {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
-import { Media } from "../../ui/media";
+import { Media } from "ui";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;

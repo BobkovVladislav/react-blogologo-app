@@ -1,5 +1,5 @@
-import { StyledSigningForm } from "../SingInForm/styles";
-import { B1, Color } from "../../ui";
+import { StyledSigningForm } from "components/SingInForm/styles";
+import { B1, Color } from "ui";
 import styled from "styled-components";
 
 const StyledResetForm = styled(StyledSigningForm)``;

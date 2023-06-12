@@ -5,7 +5,7 @@ import {
   SignInText,
   StyledLink,
   StyledSigningForm,
-} from "../SingInForm/styles";
+} from "components/SingInForm/styles";
 import styled from "styled-components";
 
 const StyledSigningUpForm = styled(StyledSigningForm)``;
@@ -20,11 +20,4 @@ const SignUpText = styled(SignInText)``;
 
 const SignUpNavLink = styled(StyledLink)``;
 
-export {
-  StyledSigningUpForm,
-  SignUpLabel,
-  SignUpInput,
-  SignUpButton,
-  SignUpText,
-  SignUpNavLink,
-};
+export { StyledSigningUpForm, SignUpLabel, SignUpInput, SignUpButton, SignUpText, SignUpNavLink };

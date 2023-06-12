@@ -1,16 +1,12 @@
-import { Modal } from "../../components/Modal/Modal";
-import { ErrorMessage } from "../SingInForm/styles";
+import { Modal } from "components";
+import { ErrorMessage } from "components/SingInForm/styles";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
-import { fetchSignUpUser } from "../../store/features/userSlice/userSlice";
-import { useAppDispatch } from "../../store/hooks/hooks";
-import {
-  validateEmail,
-  validateName,
-  validatePassword,
-} from "../../utils/validateForm";
+import { ROUTE } from "routes/routes";
+import { fetchSignUpUser } from "store/features/userSlice/userSlice";
+import { useAppDispatch } from "store/hooks/hooks";
+import { validateName, validateEmail, validatePassword } from "utils/validateForm";
 import {
   SignUpButton,
   SignUpInput,
@@ -20,7 +16,7 @@ import {
   StyledSigningUpForm,
 } from "./styles";
 
-export interface SignInFormTypesState {
+export interface SignInFormTypes {
   email: string;
   password: string;
   userName: string;
@@ -54,9 +50,9 @@ export const SignUpForm = () => {
     watch,
     getValues,
     reset,
-  } = useForm<SignInFormTypesState>();
+  } = useForm<SignInFormTypes>();
 
-  const onSubmit: SubmitHandler<SignInFormTypesState> = (userInfo) => {
+  const onSubmit: SubmitHandler<SignInFormTypes> = (userInfo) => {
     const userInfoToLS: UserInfoToLSState = {
       id: Math.floor(Math.random() * 10000) + 1,
       name: userInfo.userName,
@@ -84,21 +80,11 @@ export const SignUpForm = () => {
   return (
     <StyledSigningUpForm onSubmit={handleSubmit(onSubmit)}>
       <SignUpLabel>Name</SignUpLabel>
-      <SignUpInput
-        type="name"
-        placeholder="Your name"
-        {...register("userName", validateName())}
-      />
-      {errors.userName && (
-        <ErrorMessage>{errors.userName.message}</ErrorMessage>
-      )}
+      <SignUpInput type="name" placeholder="Your name" {...register("userName", validateName())} />
+      {errors.userName && <ErrorMessage>{errors.userName.message}</ErrorMessage>}
 
       <SignUpLabel>Email</SignUpLabel>
-      <SignUpInput
-        type="email"
-        placeholder="Your email"
-        {...register("email", validateEmail())}
-      />
+      <SignUpInput type="email" placeholder="Your email" {...register("email", validateEmail())} />
       {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
 
       <SignUpLabel>Password</SignUpLabel>
@@ -107,9 +93,7 @@ export const SignUpForm = () => {
         placeholder="Your password"
         {...register("password", validatePassword())}
       />
-      {errors.password && (
-        <ErrorMessage>{errors.password.message}</ErrorMessage>
-      )}
+      {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
 
       <SignUpLabel>Confirm assword</SignUpLabel>
       <SignUpInput
@@ -117,13 +101,10 @@ export const SignUpForm = () => {
         placeholder="Confirm password"
         {...register("confirmPassword", { required: true })}
       />
-      {watch("confirmPassword") !== watch("password") &&
-      getValues("confirmPassword") ? (
+      {watch("confirmPassword") !== watch("password") && getValues("confirmPassword") ? (
         <ErrorMessage>*password not match</ErrorMessage>
       ) : null}
-      {errors.password && (
-        <ErrorMessage>{errors.password.message}</ErrorMessage>
-      )}
+      {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
 
       <SignUpButton type="submit">Sign Up</SignUpButton>
       <SignUpText>
@@ -131,14 +112,9 @@ export const SignUpForm = () => {
         <SignUpNavLink to={ROUTE.HOME + ROUTE.SIGN_IN}>Sign In</SignUpNavLink>
       </SignUpText>
       {isActive && !errorMessage && (
-        <Modal
-          message="Authorization successful"
-          handleClick={handleNavigate}
-        />
+        <Modal message="Authorization successful" handleClick={handleNavigate} />
       )}
-      {isActive && errorMessage && (
-        <Modal message={errorMessage} handleClick={handleCloseModal} />
-      )}
+      {isActive && errorMessage && <Modal message={errorMessage} handleClick={handleCloseModal} />}
     </StyledSigningUpForm>
   );
 };

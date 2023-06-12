@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui/media";
+import { Media } from "ui";
 
 const StyledBlogList = styled.div`
   display: grid;

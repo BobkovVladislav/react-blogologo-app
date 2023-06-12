@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media, H2, Color, S1, B2 } from "../../ui";
+import { Media, H2, Color, S1, B2 } from "ui";
 
 const Wrapper = styled.div`
   display: grid;
@@ -32,8 +32,7 @@ const Image = styled.img`
   border-radius: 15px;
   object-fit: cover;
   object-position: 50% 20%;
-  box-shadow: rgba(14, 30, 37, 0.9) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.9) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.9) 0px 2px 4px 0px, rgba(14, 30, 37, 0.9) 0px 2px 16px 0px;
 `;
 
 const Text = styled.p`

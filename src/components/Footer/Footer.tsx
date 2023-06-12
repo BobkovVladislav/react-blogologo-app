@@ -1,4 +1,4 @@
-import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
+import { ThemeToggler } from "components";
 import { StyledFooter, CopyRight } from "./styles";
 
 export const Footer = () => {

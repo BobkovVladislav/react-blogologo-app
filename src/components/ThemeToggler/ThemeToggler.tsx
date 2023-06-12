@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { FormControlLabel } from "@mui/material";
 import { CustomSwitch } from "./styles";
-import { setTheme } from "../../store/selectors/themeSelector";
-import { toggleTheme } from "../../store/features/themeSlice/themeSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
+import { toggleTheme } from "store/features/themeSlice/themeSlice";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { setTheme } from "store/selectors/themeSelector";
 
 export const ThemeToggler = () => {
   const { theme } = useAppSelector(setTheme);

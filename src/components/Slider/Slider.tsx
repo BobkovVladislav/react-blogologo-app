@@ -3,11 +3,11 @@ import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import { getAllArticles } from "../../store/selectors/blogsSelector";
-import { useAppSelector } from "../../store/hooks/hooks";
+import { useAppSelector } from "store/hooks/hooks";
+import { getAllArticles } from "store/selectors/blogsSelector";
 import { StyledSwiper } from "./styles";
-import { Slide } from "../Slide/Slide";
-import { BlogItemApi } from "../../types";
+import { Slide } from "components";
+import { BlogItemApi } from "types";
 
 interface SliderProps {
   blogItem: BlogItemApi;

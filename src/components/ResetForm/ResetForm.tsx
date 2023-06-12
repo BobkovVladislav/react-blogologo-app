@@ -1,12 +1,12 @@
-import { Modal } from "../Modal/Modal";
+import { Modal } from "components";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
-import { getUserInfo } from "../../store/selectors/userSelector";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { resetPassword } from "../../store/features/userSlice/userSlice";
-import { validateEmail } from "../../utils/validateForm";
+import { ROUTE } from "routes/routes";
+import { useAppSelector, useAppDispatch } from "store/hooks/hooks";
+import { getUserInfo } from "store/selectors/userSelector";
+import { resetPassword } from "store/features/userSlice/userSlice";
+import { validateEmail } from "utils/validateForm";
 import { StyledResetForm, ResetLabel, ResetInput, ResetButton } from "./styles";
 
 export interface SignInFormTypes {
@@ -51,12 +51,8 @@ export const ResetForm = () => {
       />
       {errors.userEmail && <p>{errors.userEmail.message}</p>}
       <ResetButton type="submit">Reset password</ResetButton>
-      {isActiveModal && error && (
-        <Modal message={error as string} handleClick={handleCloseModal} />
-      )}
-      {isActiveModal && !error && (
-        <Modal message="Check your email" handleClick={handleBackHome} />
-      )}
+      {isActiveModal && error && <Modal message={error as string} handleClick={handleCloseModal} />}
+      {isActiveModal && !error && <Modal message="Check your email" handleClick={handleBackHome} />}
     </StyledResetForm>
   );
 };

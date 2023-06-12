@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Color } from "../../ui";
-import { Media } from "../../ui/media";
-import { Search } from "../Search/Search";
+import { Color, Media } from "ui";
+import { Search } from "components/Search/Search";
 
 const Navigation = styled.div`
   display: grid;

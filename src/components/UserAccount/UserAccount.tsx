@@ -1,9 +1,9 @@
 import { StyledIcon, StyledInitials, StyledNavLink, UserInfo } from "./styles";
 import { NavLink } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
+import { ROUTE } from "routes/routes";
+import { useAppSelector } from "store/hooks/hooks";
+import { getUserInfo } from "store/selectors/userSelector";
 import { memo } from "react";
-import { getUserInfo } from "../../store/selectors/userSelector";
-import { useAppSelector } from "../../store/hooks/hooks";
 
 interface UserAccountProps {
   handleClose: () => void;

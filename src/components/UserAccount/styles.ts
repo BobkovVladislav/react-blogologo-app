@@ -1,7 +1,7 @@
-import { SignInIcon } from "../../assets";
+import { SignInIcon } from "assets";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color } from "ui";
 
 const UserInfo = styled.div`
   display: flex;

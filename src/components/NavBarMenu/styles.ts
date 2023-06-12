@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Media } from "../../ui/media";
-import { Color } from "../../ui";
+import { Media, Color } from "ui";
 
 const StyledNav = styled(motion.nav)`
   display: grid;

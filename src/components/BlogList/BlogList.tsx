@@ -1,8 +1,8 @@
-import { BlogListItem } from "../BlogListItem/BlogListItem";
+import { BlogListItem } from "components";
 import { memo } from "react";
-import { useAppDispatch } from "../../store/hooks/hooks";
-import { addToFavorite } from "../../store/features/favoritesSlice/favoritesSlice";
-import { BlogItemApi } from "../../types";
+import { useAppDispatch } from "store/hooks/hooks";
+import { addToFavorite } from "store/features/favoritesSlice/favoritesSlice";
+import { BlogItemApi } from "types";
 import { StyledBlogList } from "./styles";
 
 interface BlogListProps {

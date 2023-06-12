@@ -1,6 +1,6 @@
-import { SearchIcon } from "../../assets";
-import { useInput } from "../../hooks/useInput";
-import { useDebounce } from "../../hooks/useDebounce";
+import { SearchIcon } from "assets";
+import { useDebounce } from "hooks/useDebounce";
+import { useInput } from "hooks/useInput";
 import {
   ChangeEvent,
   FormEvent,
@@ -12,10 +12,10 @@ import {
 } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
+import { ROUTE } from "routes/routes";
+import { setSearchValue } from "store/features/blogsSlice/blogsSlice";
+import { useAppDispatch } from "store/hooks/hooks";
 import { InputWrapper, StyledForm, StyledInput, SubmitButton } from "./styles";
-import { setSearchValue } from "../../store/features/blogsSlice/blogsSlice";
-import { useAppDispatch } from "../../store/hooks/hooks";
 
 interface SearchProps {
   placeholder: string;
@@ -48,7 +48,7 @@ export const Search = memo((props: SearchProps) => {
     dispatch(
       setSearchValue({
         searchValue: debouncedValue,
-      })
+      }),
     );
   }, [debouncedValue, dispatch]);
 
@@ -57,12 +57,7 @@ export const Search = memo((props: SearchProps) => {
       {isInputActive ? (
         <StyledForm onSubmit={handleSearch}>
           <InputWrapper ref={ref}>
-            <StyledInput
-              type="search"
-              placeholder="Search ..."
-              name="search"
-              {...searchValue}
-            />
+            <StyledInput type="search" placeholder="Search ..." name="search" {...searchValue} />
             <SubmitButton type="submit" onClick={props.onClick}></SubmitButton>
           </InputWrapper>
         </StyledForm>

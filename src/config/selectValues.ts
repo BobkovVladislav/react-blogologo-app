@@ -1,4 +1,4 @@
-import { TipOption } from "../types/types";
+import { TipOption } from "types";
 
 export const options: readonly TipOption[] = [
   { value: "publishedAt:DESC", label: "Date (Latest)" },

@@ -1,9 +1,7 @@
-import { FavoritesIcon } from "../../assets";
-import { Search } from "../Search/Search";
-import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
-import { UserAccount } from "../UserAccount/UserAccount";
+import { FavoritesIcon } from "assets";
+import { Search, ThemeToggler, UserAccount } from "components";
 import React, { memo } from "react";
-import { ROUTE } from "../../routes/routes";
+import { ROUTE } from "routes/routes";
 import { SearchWrapper, StyledFavoritesLink, StyledNav } from "./styles";
 
 interface NavBarMenuProps {
@@ -18,37 +16,23 @@ const menuVariants = {
   idle: {},
 };
 
-export const NavBarMenu = memo(
-  ({ isMobile, isOpen, handleClose }: NavBarMenuProps) => {
-    const currentVariant = isMobile ? (isOpen ? "open" : "closed") : "idle";
+export const NavBarMenu = memo(({ isMobile, isOpen, handleClose }: NavBarMenuProps) => {
+  const currentVariant = isMobile ? (isOpen ? "open" : "closed") : "idle";
 
-    return (
-      <StyledNav
-        animate={currentVariant}
-        variants={menuVariants}
-        initial="idle"
-      >
-        {isMobile ? (
-          <SearchWrapper>
-            <Search
-              placeholder="Search ..."
-              type={"text"}
-              onClick={handleClose}
-            />
-          </SearchWrapper>
-        ) : (
-          <Search
-            placeholder="Search ..."
-            type={"text"}
-            onClick={handleClose}
-          />
-        )}
-        <StyledFavoritesLink to={ROUTE.FAVORITES} onClick={handleClose}>
-          {isMobile ? <span>Favorites</span> : <FavoritesIcon />}
-        </StyledFavoritesLink>
-        <UserAccount handleClose={handleClose} />
-        {isMobile && <ThemeToggler />}
-      </StyledNav>
-    );
-  }
-);
+  return (
+    <StyledNav animate={currentVariant} variants={menuVariants} initial="idle">
+      {isMobile ? (
+        <SearchWrapper>
+          <Search placeholder="Search ..." type={"text"} onClick={handleClose} />
+        </SearchWrapper>
+      ) : (
+        <Search placeholder="Search ..." type={"text"} onClick={handleClose} />
+      )}
+      <StyledFavoritesLink to={ROUTE.FAVORITES} onClick={handleClose}>
+        {isMobile ? <span>Favorites</span> : <FavoritesIcon />}
+      </StyledFavoritesLink>
+      <UserAccount handleClose={handleClose} />
+      {isMobile && <ThemeToggler />}
+    </StyledNav>
+  );
+});

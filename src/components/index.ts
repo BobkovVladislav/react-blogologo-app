@@ -3,7 +3,7 @@ import { BlogListItem } from "./BlogListItem/BlogListItem";
 import { CustomSelect } from "./CustomSelect/CustomSelect";
 import { Footer } from "./Footer/Footer";
 import { MainTemplate } from "./MainTemplate/MainTemplate";
-import { NavBar } from "./Navbar/NavBar";
+import { NavBar } from "./NavBar/NavBar";
 import { Search } from "./Search/Search";
 import { SignInForm } from "./SingInForm/SignInForm";
 import { SignUpForm } from "./SignUpForm/SignUpForm";
