@@ -1,4 +1,5 @@
 import { NavBarMenu } from "components";
+import { BurgerMenu } from "components/BurgerMenu/BurgerMenu";
 import { Navigation, StyledNavLink } from "./styles";
 import { Logo } from "assets";
 import { ROUTE } from "routes/routes";
@@ -16,7 +17,7 @@ export const NavBar = () => {
         <Logo />
       </StyledNavLink>
       <NavBarMenu isOpen={isActive} isMobile={isMobile} handleClose={setIsActive} />
-      {/* {isMobile && <BurgerMenu toggleMenu={setIsActive} isActive={isActive} />} */}
+      {isMobile && <BurgerMenu toggleMenu={setIsActive} isActive={isActive} />}
     </Navigation>
   );
 };
